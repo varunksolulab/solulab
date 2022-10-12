@@ -21,7 +21,7 @@ options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 driver.maximize_window()
 
 def location_res(result):
