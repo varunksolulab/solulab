@@ -15,16 +15,16 @@ import datetime
 from packaging.requirements import URL
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
-options = Options()
+from selenium.webdriver.firefox.options import Options as foptions
+options = foptions()
 options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
-
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options)
 driver.maximize_window()
-
 def location_res(result):
     '''Function to extract location from Indeed search result'''
 

@@ -15,16 +15,16 @@ import datetime
 from packaging.requirements import URL
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
-options = Options()
+from selenium.webdriver.firefox.options import Options as foptions
+options = foptions()
 options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
-
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options)
 driver.maximize_window()
-
 def location_res(result):
     '''Function to extract location from Indeed search result'''
 
@@ -35,6 +35,7 @@ def location_res(result):
         else:
             return tag.text
     except:
+        print("Location is NaN")
         return 'NaN'
 
 
@@ -48,6 +49,7 @@ def company_res(result):
         except:      
             return tag.text
     except:
+        print("C_Name is NaN")
         return 'NaN'
 
 
@@ -59,6 +61,7 @@ def job_res(result):
         job = tag.text
         return job
     except:
+        print("Job is NaN")
         return 'NaN'
 
 
@@ -79,6 +82,7 @@ def salary_res(result):
             return tag3.text
 
     except:
+        print("Salary is NaN")
         return 'NaN'
 
 
@@ -170,7 +174,7 @@ def all_funcs(search):
                 entries.append(result_data)
             else:
                 continue
-
+    print("Entries:",entries)
     return entries
 
 
@@ -191,6 +195,7 @@ def scrape(cities_list, max=10):
                 for i in range(len(data)):  # add info to results list
                     results.append(data[i])
                 sleep(1)
+                print("Results", results)
         #     print(city + " DONE")
         #     print("Elapsed time: " + str(dt.datetime.now() - a))  # Update user on progress
 

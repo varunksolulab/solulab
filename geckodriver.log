@@ -1,0 +1,22 @@
+1665607062890	geckodriver	INFO	Listening on 127.0.0.1:55069
+1665607065919	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55070" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\HP\\AppData\\Local\\Temp\\rust_mozprofile9wQQQ9"
+1665607066551	Marionette	INFO	Marionette enabled
+1665607066559	Marionette	INFO	Listening on port 55079
+Read port: 55079
+WebDriver BiDi listening on ws://127.0.0.1:55070
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\HP\\AppData\\Local\\Temp\\rust_mozprofile9wQQQ9\\search.json.mozlz4", (void 0)))
+1665607068713	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55070/devtools/browser/4b22af2b-4432-4037-b2dd-54ddea9f39fa
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 307: NS_ERROR_FAILURE: Should pass a non-null uri
+1665607963677	geckodriver	INFO	Listening on 127.0.0.1:56283
+1665607966720	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "56284" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\HP\\AppData\\Local\\Temp\\rust_mozprofile0GfE3r"
+*** You are running in headless mode.
+1665607967138	Marionette	INFO	Marionette enabled
+1665607967143	Marionette	INFO	Listening on port 56293
+Read port: 56293
+WebDriver BiDi listening on ws://127.0.0.1:56284
+1665607967240	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\HP\\AppData\\Local\\Temp\\rust_mozprofile0GfE3r\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56284/devtools/browser/c520bbc6-cef4-46b2-a644-c6f264c2c31b
+JavaScript error: https://c03.s3.indeed.com/mosaic-provider-jobcards/dist/83fa0e26eedab498e98f/js/ApolloClient.js, line 2: Error: NetworkError when attempting to fetch resource.
