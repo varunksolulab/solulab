@@ -181,7 +181,7 @@ def scrape(cities_list, max=10):
     print(a)
     for job in jobs:
         for city in cities_list:  # Iterate through cities
-            for start in range(0, max_results_per_city, 10):  # Iterate through results pages
+            for start in range(0, max_results_per_city, 8):  # Iterate through results pages
                 url = "https://www.indeed.com/jobs?q="+job+"&l=" + city + "&start=" + str(start)
                 driver.execute_script(f"location.href='{url}';")
                 time.sleep(6)
@@ -204,7 +204,7 @@ def scrape(cities_list, max=10):
                                         'Company URL'])
 
     name = str(dt.datetime.now())
-    df.to_csv(f'./csvs/indeed_python.csv')  # Save data
+    df.to_csv(f'./csvs/indeed_python.csv',encoding='utf-8')  # Save data
 
 
 cities = ['Alabama',

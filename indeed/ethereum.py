@@ -19,7 +19,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as foptions
 options = foptions()
-options.add_argument('--headless')
+# options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
@@ -275,4 +275,4 @@ jobs = ['Ethereum%20Developer', 'Blockchain%20Developer%20-%20Solidity/Ethereum'
 
 
 scrape(cities)
-driver.close()
+driver.close()    

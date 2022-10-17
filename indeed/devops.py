@@ -19,7 +19,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as foptions
 options = foptions()
-options.add_argument('--headless')
+# options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
@@ -132,7 +132,7 @@ def Posted_Date(result):
         tag = result.find(name='span',attrs={'class':'date'})
         posted_date = tag.text
         date_ = re.findall(r'\d+', posted_date)
-        d = datetime.timedelta(days=int(date_[0]))
+        d = datetime.timedelta(days=int(date_[0]))  
         a = Today - d
         Published_Date = a.strftime('%Y-%m-%d')
         return Published_Date

@@ -19,11 +19,11 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as foptions
 options = foptions()
-options.add_argument('--headless')
+# options.add_argument('--headless')
 
 # profile = webdriver.FirefoxProfile("/Users/apple/Library/Application Support/Firefox/Profiles/0ur7nimh.default-release-11")
 # gecko_path="/Users/apple/doc/Git/geckodriver/geckodriver"
-driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options)
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
 driver.maximize_window()
 
 def location_res(result):
@@ -182,7 +182,7 @@ def scrape(cities_list, max=10):
     print(a)
     for job in jobs:
         for city in cities_list:  # Iterate through cities
-            for start in range(0, max_results_per_city, 10):  # Iterate through results pages
+            for start in range(0, max_results_per_city, 5):  # Iterate through results pages
                 url = "https://www.indeed.com/jobs?q="+job+"&l=" + city + "&start=" + str(start)
                 driver.execute_script(f"location.href='{url}';")
                 time.sleep(6)
