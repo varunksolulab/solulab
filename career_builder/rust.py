@@ -163,7 +163,7 @@ def scrape(cities_list,job_list, max=50):
     df = pd.DataFrame(results, columns=['Job Title', 'Company', 'Location', 'Salary','Publishing Date', 'Job Description', 'Source'])
 
     name = str(dt.datetime.now())
-    df.to_csv(f'csvs/CareerBuilder_mern.csv')  # Save data
+    df.to_csv(f'csvs/CareerBuilder_rust.csv')  # Save data
 
 
 cities = ['Alabama',
@@ -218,9 +218,9 @@ cities = ['Alabama',
 'Wyoming'
 ]
 
-jobs = [ 'Full%20Stack%20MERN%20Engineer', 
-'Full-stack%20MEAN/MERN%20Developer', 'MERN%20Stack%20Lead', 'MERN%20Stack%20Developer', 'MEAN/MERN%20Engineer%20-%20Node.js/Angular%202/React.js',
- 'Tech%20Lead%20MERN', 'Technical%20Architect%20-%20MERN', 'Full%20Stack%20Engineer%20-%20Java/Design%20Patterns', 
- 'Technical%20Architect-%20Backend%20Development%20-%20MEAN/MERN%20STACK', 'Senior%20Software%20Development%20Engineer%20-%20Full%20Stack%20(MERN)']
+jobs = ['Rust%20/%20Solana%20Developer', 'Developer%20Relations%20(Harmony%20/%20Solana)', 
+'Solana%20Blockchain%20Engineer', 'Senior%20Rust%20Developer%20(Solana)', 'Developer%20Relations%20(Harmony%20/%20Solana)', 
+'Solana%20Software%20Engineer', 'Senior%20Rust%20(Solana%20Blockchain)%20Developer', 
+'Lead%20Engineer(Blockchain%20-%20Algorand,%20Ethereum%20&%20EVM%20chains,%20Solana)']
 
 scrape(cities,jobs)

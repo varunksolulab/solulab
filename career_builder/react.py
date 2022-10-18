@@ -163,7 +163,7 @@ def scrape(cities_list,job_list, max=50):
     df = pd.DataFrame(results, columns=['Job Title', 'Company', 'Location', 'Salary','Publishing Date', 'Job Description', 'Source'])
 
     name = str(dt.datetime.now())
-    df.to_csv(f'csvs/CareerBuilder_ethereum.csv')  # Save data
+    df.to_csv(f'csvs/CareerBuilder_react.csv')  # Save data
 
 
 cities = ['Alabama',
@@ -218,18 +218,11 @@ cities = ['Alabama',
 'Wyoming'
 ]
 
-jobs = ['Ethereum%20Developer', 'Blockchain%20Developer%20-%20Solidity/Ethereum',
-    'Sr.%20Blockchain%20Engineer%20(Ganache)', 'Solidity%20Developer', 'Remote%20Blockchain%20Engineer%20(Ethereum/Solidity)', 'Smart%20Contract%20Developer', 
-    'Fullstack%20Blockchain%20Developer', 'Blockchain%20Developer%20-%20Integration%20&%20Support', 'Research%20Engineer', 
-    'Game%20Developer%20-%20Crypto%20/%20Blockchain%20/%20DeFi', 'Senior%20Smart%20Contract%20Dev', 'Senior%20Backend%20Developer',
-     'Blockchain%20Engineer%20-%20Ethereum/Hyperledger', 'Ethereum%20Software%20Engineer', 'Blockchain%20(Solidity)%20Expert', 
-     'Solidity%20Developer%20-%20DeFi', 'EOS/Graphene%20Blockchain%20Developer', 'Frontend%20Engineer%20-%20Blockchain%20Product',
-      'Blockchain%20Developer%20/%20NFT', 'Senior%20Blockchain%20Engineer', 'Blockchain%20Engineer%20:%20rust/golang', 
-      'Senior%20Golang%20Blockchain%20Protocol%20Developer', 'Consultant%20-%20Hyperledger%20Fabric%20Blockchain', 
-      'Blockchain%20Developer%20-%20Ethereum/Hyperledger', 'Blockchain%20Developer%20-%20Hyperledger%20Fabric%20developer', 
-      'Blockchain%20Engineer%20-%20Ethereum/Hyperledger', 'Blockchain%20Architect', 'Hyperledger%20Fabric%20Adminstrator%20(Remote-PAN%20India)', 
-      'Senior%20Blockchain%20Engineer%20-%20Solidity/Smart%20Contract', 'Blockchain%20Developer%20Consultant%20(Associate/Senior)', 
-      'Senior%20Blockchain%20Software%20Developer', 'Senior%20Blockchain%20Business%20Analyst', 'Core%20Blockchain%20Engineer%20at%20Cosmos%20SDK',
-       'Senior%20Architect%20�%20Blockchain%20and%20Enterprise%20Ethereum']
-
+jobs = ['React.js%20Developer', 'React%20Native/%20ReactJs%20Developer', 'Java%20&%20ReactJS%20Developer',
+      'Full%20Stack%20Developer%20(Laravel/PHP%20and%20ReactJS)', 'Frontend%20Developer%20-%20React.js', 'Senior%20Frontend%20Engineer%20(React)', 
+'Scala/React.js%20Developer', 'React%20UI%20frontend%20Developer', 'React%20Native%20Development', 
+'Full%20Stack%20Developer%20-%20Python%20/%20Django%20/%20React.js', 'React.js/Ruby%20Developer', 'Frontend%20Engineer%20(%20React%20)', 
+'React%20Developer', 'Tech%20Manager%20&%20Back%20End%20Engineer%20(RoR%20+%20React)', 'React.js%20Developer%20-%20Javascript/HTML/CSS', 
+'PHP%20&%20ReactJS%20Developer', 'Senior%20React.js%20Developer%20-%20HTML5/CSS3', 'Remote%20React/PostgreSQL%20Developer', 
+'Java%20Fullstack%20with%20Reactjs']
 scrape(cities,jobs)

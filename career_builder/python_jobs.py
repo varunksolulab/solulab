@@ -12,10 +12,10 @@ import urllib
 import pandas as pd
 import urllib.request
 
-from packaging.requirements import URL
+from packaging.requirements import URL   
 
 
-def location_res(result):
+def location_res(result): 
     '''Function to extract location from Indeed search result'''
 
     tag = result.find(name='div', attrs={'class': 'data-details'})  # find appropriate tag
@@ -163,7 +163,7 @@ def scrape(cities_list,job_list, max=50):
     df = pd.DataFrame(results, columns=['Job Title', 'Company', 'Location', 'Salary','Publishing Date', 'Job Description', 'Source'])
 
     name = str(dt.datetime.now())
-    df.to_csv(f'csvs/CareerBuilder_ios.csv')  # Save data
+    df.to_csv(f'csvs/CareerBuilder_python.csv')  # Save data
 
 
 cities = ['Alabama',
@@ -218,8 +218,11 @@ cities = ['Alabama',
 'Wyoming'
 ]
 
-jobs = [ 'iOS%20Developer', 'iOS%20Developer%20-%20SWIFT/Objective%20C', 
-       'Flutter%20iOS%20Developer', 'Senior%20iOS%20Engineer%20(AR/3D/Metal)', 'React%20Native%20Developer%20-%20iOS/Android%20Platform',
-        '%20iOS%20Developer%20-%20Objective%20C/Xcode', 'iOS%20Developer%20-%20SWIFT/Cocoa%20Touch']
-
+jobs = ['Python%20Developer', 
+   'Senior%20Python%20Engineer', 'Senior%20Python/Machine%20Learning%20Developer', 'Python/Docker%20Back-end%20Engineer', 
+   'Data%20Engineer%20(SQL+Python)', 'AI-%20ML%20Python%20Software%20Engineer', 'SDE%201%20/%20SDE%202%20-%20Python', 'Python%20Flask%20Developer',
+    'Python%20Automation%20Engineer', 'Python/Kubernetes%20Engineer', 'Python%20Programmer', 'Senior%20Backend%20Developer%20(Python,%20Apache%20Kafka)',
+     'Python%20Bigdata%20Developer', 'Backend%20Engineer%20-%20Python+Elastic%20Search', 'Python%20Django%20Training%20Program', 
+     'Python%20Developer%20-%20Django/Flask']
+   
 scrape(cities,jobs)
