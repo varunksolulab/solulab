@@ -128,14 +128,21 @@ def job_description(result):
 
 def Posted_Date(result):
     try:
+        p_date = None
         Today = datetime.datetime.today()
         tag = result.find(name='span',attrs={'class':'date'})
         posted_date = tag.text
-        date_ = re.findall(r'\d+', posted_date)
-        d = datetime.timedelta(days=int(date_[0]))
-        a = Today - d
-        Published_Date = a.strftime('%Y-%m-%d')
-        return Published_Date
+        if posted_date =='PostedToday':
+            p_date = datetime.datetime.today()
+            Published_Date = p_date.strftime('%Y-%m-%d')
+            return Published_Date
+        else:
+            date_ = re.findall(r'\d+', posted_date)
+            d = datetime.timedelta(days=int(date_[0]))
+            a = Today - d
+            Published_Date = a.strftime('%Y-%m-%d')
+            return Published_Date
+
     except:
         Published_Date = 'NaN'
         return Published_Date
@@ -171,8 +178,8 @@ def all_funcs(search):
                 entries.append(result_data)
             else:
                 continue
-    print(entries)
-    return entries
+        print(entries)
+        return entries
 
 
 def scrape(cities_list, max=10):
@@ -188,10 +195,11 @@ def scrape(cities_list, max=10):
                 time.sleep(6)
                 html = driver.page_source
                 soup = BeautifulSoup(html, 'html.parser', from_encoding="utf-8")
-                data = all_funcs(soup)  # use functions from before to extract all job listing info
-                for i in range(len(data)):  # add info to results list
-                    results.append(data[i])
-                sleep(1)
+                data = all_funcs(soup)
+                if data:
+                    for i in range(len(data)):  # add info to results list
+                        results.append(data[i])
+                    sleep(1)
         #     print(city + " DONE")
         #     print("Elapsed time: " + str(dt.datetime.now() - a))  # Update user on progress
 
